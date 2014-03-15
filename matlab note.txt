@@ -1,0 +1,130 @@
+>> A = [ 1 1 1; 1 1 1; 1 1 1;]
+
+>> A(2,3) % row 2, column 3
+
+>> A + B
+
+>> A * B
+
+>> z = a + bi
+>> z = complex(a, b)
+>> z = Aexp(j*b)
+
+for j=1:4
+	>>
+end
+
+
+while n <= M
+	<<
+end
+
+plot(x, y) % x versus y
+title('my graph')
+xlabel('xlabel')
+ylabel('ylabel')
+axis([0, 1, -2, 2])
+hold on	% superimpose all subseq plots
+hold off	% turn off ^
+clf		% clear graphics screen
+
+
+Wc = 650	% assume center wavelength of 650 nm
+N0 = 1	% refractive index of air
+N3 = 3.5	% refractive index of the solar cell
+
+%Normal incidence, transmission and reflection coefficients become:
+
+T01 = (2*N0)/(N0+N1);
+T12 = (2*N1)/(N1+N2);
+T23 = (2*N2)/(N2+N3);
+
+R01
+
+
+delta(X) = (PI/2)*
+
+
+
+
+% Two layer
+ 
+ReflArr = []; % Array to contain extracted reflectivity values 
+ 
+% Set material parameters 
+    % Indicies
+    N0 = 1;
+    N1 = 1.4;
+    N2 = 2.62;
+    N3 = 3.5;
+ 
+    % Reflective Coefficient
+    R01 = (N0-N1)/(N0+N1);
+    R12 = (N1-N2)/(N1+N2);
+    R23 = (N2-N3)/(N2+N3); 
+    % Transmission Coefficient
+    T01 = (2*N0)/(N0+N1);
+    T12 = (2*N1)/(N1+N2);
+    T23 = (2*N2)/(N2+N3);
+ 
+    % Dynamical Matrix
+    Q01 = (1/T01)*[1 R01; R01 1];
+    Q12 = (1/T12)*[1 R12; R12 1];
+    Q23 = (1/T23)*[1 R23; R23 1];
+ 
+% Set Design Parameters
+    % Center wavelength
+    Wc = 650;
+    
+    % Layer thickness
+    
+% Calculate Transfer matrix
+    
+    FOR W = 400:1400        % Wavelength range from 400 to 1400 nm
+        Delta = (PI*Wc)/(2*W);
+ 
+        % Propagation Matrix
+        P1 = [EXP(j*Delta) 0; 0 EXP(-j*Delta)];
+        P2 = P1;            % same delta
+ 
+        % Transfer Matrix
+        T = Q01*(P1*Q12*P2*q23);
+        
+        % Extract Reflectivity
+            % Reflectiive coeficient from transfer matrix:
+            R = T(2,1)/T(1,1);
+            Refl = (ABS(R))^2;
+            
+            % Record reflectivity value
+            ReflArr = [ReflArr Refl];
+   END;
+   
+   % Plot reflectivity against wavelength:
+   wavelength = 400:1:1400;
+   plot(ReflArr, wavelength);
+   
+
+
+
+
+
+
+
+1.diagram; all params shown
+2.Report the full transfer matrix for each system, as a product of all the individual 
+matrices (see TMM theory below), for arbitrary incident wavelengt
+3.Evaluate analytically each system at the central wavelength, present the formula for the reflectance at this wavelength, and 
+determine the relationship between the index values that minimizes this reflectance
+4.Provide the requested refractive index values. 
+
+5. algo to numerically evaluate the power production
+6. Provide plots of the nominally optimal reflectivity (i.e., the reflectivity for the quarter-wave stack whose indices were analytically determined).
+
+wav vs R
+
+7. Tabulate (or plot) the dependence of the power  4
+production on layer indices and thicknesses to ascertain if the design approach followed does indeed maximize power production. Discuss and suggest other optimization approaches.
+
+vary n for the above, to see max power
+
+8. Discuss and suggest other optimization approaches. 
